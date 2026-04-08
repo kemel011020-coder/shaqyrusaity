@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шәкәрім 1 жас | Тұсаукесер</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #f4f7f9; margin: 0; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; max-width: 420px; width: 100%; padding: 40px 25px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; border-top: 10px solid #2c5282; position: relative; }
+        
+        /* Музыка батырмасы */
+        .music-btn { position: absolute; top: 20px; right: 20px; cursor: pointer; font-size: 24px; background: white; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #2c5282; z-index: 100; }
+        .playing { animation: spin 4s linear infinite; }
+        @keyframes spin { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; color: #2c5282; margin: 10px 0; text-transform: uppercase; }
+        .sub-header { font-size: 1.2rem; letter-spacing: 4px; color: #4a5568; margin-bottom: 25px; font-weight: 700; }
+        .cursive { font-family: 'Great Vibes', cursive; font-size: 2.3rem; color: #2c5282; margin: 20px 0; }
+        
+        .main-text { font-size: 0.95rem; line-height: 1.7; color: #2d3748; text-transform: uppercase; font-weight: 600; margin-bottom: 25px; padding: 0 10px; }
+        
+        .info-panel { background: #f8fafc; padding: 20px; border-radius: 15px; margin: 25px 0; border: 1px solid #e2e8f0; }
+        .photo-frame { width: 100%; border-radius: 15px; margin: 20px 0; border-bottom: 5px solid #b38e5d; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .input-field { width: 90%; padding: 15px; margin-bottom: 15px; border: 1px solid #cbd5e0; border-radius: 10px; text-align: center; font-family: 'Montserrat'; font-size: 1rem; }
+        
+        .btn-send { background: #25d366; color: white; padding: 18px; width: 100%; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; text-decoration: none; display: block; font-size: 1.1rem; transition: 0.3s; }
+        .btn-2gis { background: white; color: #2c5282; border: 2px solid #2c5282; padding: 12px; width: 100%; border-radius: 10px; display: block; text-decoration: none; margin-top: 15px; font-size: 0.9rem; font-weight: 700; }
+        .btn-send:hover { background: #1ebe57; }
+
+        .parents-section { margin-top: 35px; border-top: 1px solid #eee; pt: 20px; }
+        .parents-title { font-size: 1.1rem; color: #b38e5d; margin-bottom: 10px; font-weight: 700; }
+        .parents-names { font-family: 'Great Vibes', cursive; font-size: 1.8rem; color: #2c5282; line-height: 1.2; }
+    </style>
+</head>
+<body onclick="startMusic()">
+
+    <div class="card">
+        <!-- Музыка батырмасы -->
+        <div class="music-btn" id="musicBtn" onclick="toggleMusic(event)">🎵</div>
+        <audio id="bgMusic" loop><source src="music.mp3" type="audio/mpeg"></audio>
+
+        <h1>ШӘКӘРІМ</h1>
+        <div class="sub-header">1 ЖАС<br>ТҰСАУ КЕСЕР</div>
+
+        <div class="cursive">Құрметті қонақтар!</div>
+
+        <div class="main-text">
+            Сіздерді ұлымыз Шәкәрімнің 1 жас, тұсаукесер тойына арнайы жайылған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!
+        </div>
+
+        <div class="info-panel">
+            <strong style="font-size: 1.2rem;">16 мамыр 2026 жыл</strong><br>
+            сағат 12:00-де
+        </div>
+
+        <div class="main-text">
+            Мекен-жайымыз:<br>
+            Түркістан қаласы,<br>
+            <strong style="color:#2c5282; font-size: 1.1rem;">“Dorba Hall”</strong><br>
+            мейрамханасы
+        </div>
+
+        <img src="photo.jpg" class="photo-frame" alt="Шәкәрім">
+
+        <div class="cursive" style="font-size: 1.6rem;">Келіңіздер, қуанышымыздың қадірлі қонағы болыңыздар!</div>
+
+        <!-- Сауалнама -->
+        <div style="margin-top: 30px; text-align: left;">
+            <label style="font-weight: 700; display: block; margin-bottom: 5px; color: #2c5282;">Аты-жөніңіз:</label>
+            <input type="text" id="guestName" class="input-field" placeholder="Есіміңізді жазыңыз...">
+            
+            <button class="btn-send" onclick="sendToWhatsApp()">Жауапты жіберу қатысамын (WhatsApp)</button>
+            <a href="https://2gis.kz/turkestan/search/Dorba%20Hall" target="_blank" class="btn-2gis">📍 2GIS МЕСТОПОЛОЖЕНИЕ</a>
+        </div>
+
+        <!-- Той иелері -->
+        <div class="parents-section">
+            <div class="parents-title">Той иелері:</div>
+            <div class="parents-names">
+                Біржан - Синдара<br>
+                Дархан - Айгерім
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('bgMusic');
+        const btn = document.getElementById('musicBtn');
+        let hasStarted = false;
+
+        // Экранды бірінші рет басқанда музыканы қосу
+        function startMusic() {
+            if (!hasStarted) {
+                audio.play();
+                btn.classList.add('playing');
+                btn.innerHTML = "🎷";
+                hasStarted = true;
+            }
+        }
+
+        // Батырмамен қосу/өшіру
+        function toggleMusic(event) {
+            event.stopPropagation(); // startMusic-тің қайта іске қосылмауы үшін
+            if (audio.paused) {
+                audio.play();
+                btn.classList.add('playing');
+                btn.innerHTML = "🎷";
+            } else {
+                audio.pause();
+                btn.classList.remove('playing');
+                btn.innerHTML = "🎵";
+            }
+        }
+
+        function sendToWhatsApp() {
+            const name = document.getElementById('guestName').value;
+            const phone = "77089521443"; // ОСЫ ЖЕРГЕ ӨЗ НӨМІРІҢІЗДІ ЖАЗЫҢЫЗ (7-ден бастап)
+            const text = `Сәлеметсіз бе! ${name ? name + ' есімінен жауап: ' : ''} Шәкәрімнің тойына міндетті түрде барамыз!`;
+            window.location.href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+        }
+    </script>
+</body>
+</html>
