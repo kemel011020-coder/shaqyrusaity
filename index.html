@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шәкәрім 1 жас | Тұсаукесер</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --background-blue: #f4f9ff;
+            --main-blue: #1e88e5;
+            --dark-blue: #0d47a1;
+            --brown-ornament: #8d6e63;
+            --gold-text: #b8962d;
+            --text-color: #33475b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--background-blue);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: var(--white);
+            max-width: 480px;
+            width: 100%;
+            padding: 50px 25px;
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(13, 71, 161, 0.1);
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(30, 136, 229, 0.1);
+        }
+
+        /* Қазақи ою-өрнек (SVG) */
+        .ornament {
+            width: 100px;
+            height: auto;
+            margin: 0 auto 20px;
+            fill: var(--brown-ornament);
+            opacity: 0.7;
+        }
+
+        .photo-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--white);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--brown-ornament);
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--dark-blue);
+            margin: 0;
+        }
+
+        .age {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--main-blue);
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .guest-section {
+            background-color: #f9fbfd;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border: 1px dashed var(--main-blue);
+        }
+
+        .guest-input {
+            width: 85%;
+            padding: 12px;
+            border: 1px solid #d0d0d0;
+            border-radius: 25px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        .details {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .details-item {
+            background: #fff;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .details-item span {
+            font-weight: 700;
+            color: var(--dark-blue);
+            float: right;
+        }
+
+        .location-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .loc-btn {
+            flex: 1;
+            padding: 10px;
+            font-size: 0.8rem;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--main-blue);
+            border: 1px solid var(--main-blue);
+            font-weight: bold;
+        }
+
+        .btn-main {
+            display: block;
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 18px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 30px;
+            box-shadow: 0 10px 20px rgba(13, 71, 161, 0.2);
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .footer-text {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--brown-ornament);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Ою-өрнек -->
+    <svg class="ornament" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 5 C30 5 20 20 20 30 C20 45 35 55 50 55 C65 55 80 45 80 30 C80 20 70 5 50 5 Z M50 15 C60 15 65 25 65 30 C65 35 60 45 50 45 C40 45 35 35 35 30 C35 25 40 15 50 15 Z" />
+    </svg>
+
+    <!-- Шәкәрімнің суреті (photo.jpg файлын жүктеуді ұмытпаңыз) -->
+    <div class="photo-container">
+        <img src="photo.jpg" alt="Шәкәрім">
+    </div>
+
+    <h2>Шақыру</h2>
+    <h1>Шәкәрім</h1>
+    <div class="age">1 ЖАС | ТҰСАУКЕСЕР</div>
+    
+    <div class="guest-section">
+        <p style="margin-top:0; font-weight:600;">Құрметті қонақ(тар):</p>
+        <input type="text" id="guestName" class="guest-input" placeholder="Есіміңізді жазыңыз...">
+    </div>
+
+    <div class="details">
+        <div class="details-item">Күні: <span>16 МАМЫР, 2026</span></div>
+        <div class="details-item">Уақыты: <span>Сағат 12:00</span></div>
+        <div class="details-item" style="border-bottom:none;">Мекен-жайы: <br><strong style="color:var(--dark-blue)">Түркістан қ., "Dorba Hall"</strong></div>
+        
+        <div class="location-box">
+            <a href="https://2gis.kz/turkestan/search/Dorba%20Hall" target="_blank" class="loc-btn">📍 2GIS карта</a>
+            <a href="https://www.google.com/maps/search/Dorba+Hall+Turkestan" target="_blank" class="loc-btn">📍 Google Maps</a>
+        </div>
+    </div>
+
+    <button onclick="sendWhatsApp()" class="btn-main">Тойға келемін!</button>
+
+    <div class="footer-text">Сіздерді асыға күтеміз!</div>
+</div>
+
+<script>
+    function sendWhatsApp() {
+        const myNumber = "77089521143"; // ОСЫ ЖЕРГЕ ӨЗ НӨМІРІҢІЗДІ ЖАЗЫҢЫЗ
+        const guestName = document.getElementById('guestName').value;
+        let text = "Сәлеметсіз бе! ";
+        if (guestName.trim() !== "") {
+            text += guestName + " есімінен Шәкәрімнің тойына жауап: ";
+        }
+        text += "Шақыруыңызды алдық, Алла жазса барамыз!";
+        
+        window.location.href = `https://wa.me/${myNumber}?text=${encodeURIComponent(text)}`;
+    }
+</script>
+
+</body>
+</html>
